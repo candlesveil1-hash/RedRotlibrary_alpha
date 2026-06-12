@@ -1,0 +1,7 @@
+-- DEMO CODE
+RedRot.initScreen(0)
+RedRot.clear()
+x = 1
+y = 1
+tranx = 1
+ymove = 0

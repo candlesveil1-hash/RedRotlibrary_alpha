@@ -1,0 +1,37 @@
+-- DEMO CODE
+RedRot.clear()
+if(keyInput == "w") then
+y = y - 1
+end
+if(keyInput == "a") then
+x = x - 1
+end
+if(keyInput == "s") then
+y = y + 1
+end
+if(keyInput == "d") then
+x = x + 1
+end
+colors = {
+	["1"] = "Red",
+	["2"] = "Green",
+	["3"] = "Blue",
+}
+tranx = tranx + 0.01
+--users should place it afterwards
+for i = 1, 23 do
+RedRot.setPixel(i, 8+math.floor(math.sin(ymove/2)*8), 1+math.floor(tranx))
+end
+ymove = ymove + 0.01
+
+RedRot.setColor(0)
+
+if (tranx >= 4) then
+tranx = 1
+end
+-- print(p)
+RedRot.setText(5,6,"not complete",colors[tostring(math.floor(tranx))]);
+RedRot.drawScreen()
+print("Zoom Out - If Can't See!")
+keyInput = RedRot.keyboardInput()
+-- print(x , y)
